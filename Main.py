@@ -1,0 +1,30 @@
+from Funciones import *
+from os import system
+
+while True:
+    try:
+        system("pause")
+        system("cls")
+        print(f"""
+===== MENU DE GESTION GREMIAL =====
+1. Registrar personajes
+2. Buscar Personaje por Nombre
+3. Elminar Personaje
+4. Subir de nivel a un Personaje
+5. Calcular Estadisticas Generales
+6. Mostrar lista de Miembros
+7. Salir del Sistema
+===================================""")
+        opcion = int(input("Seleccione : "))
+
+        match opcion:
+            case 1:pass
+            case 2:pass
+            case 3:pass
+            case 4:pass
+            case 5:pass
+            case 6:pass
+            case 7:pass
+            case _: print("Error")
+    except Exception as e:
+        print(f"Error {e}")
