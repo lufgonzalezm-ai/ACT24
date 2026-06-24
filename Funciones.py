@@ -38,8 +38,30 @@ def mostrar (nombre):
 
 def listar():
     if len(personajes)>0:
-        print(f"{"N°":<3}.- {"nombre":<15} {"Clase":<10} {"nivel":<4} {"rango":<10}")
+        print(f"{"N°":<3}.- {"nombre":<15} {"clase":<10} {"nivel":<4} {"rango":<10}")
         for i in range(len(personajes)):
-            print(f"{i+1<3}.- {personajes[i]["nombre"]:<20} {personajes[i]["Clase"] :<10} {personajes[i]["nivel"]:<4} {personajes[i]["rango"]:<10}")
+            print(f"{i+1<3}.- {personajes[i]["nombre"]:<20} {personajes[i]["clase"] :<10} {personajes[i]["nivel"]:<4} {personajes[i]["rango"]:<10}")
     else:
         print("No hay personajes Registrados")
+
+def eliminar(nombre):
+    posicion = buscar(nombre)
+    if posicion >=0:
+        personajes.pop(posicion)
+        print("Personaje Eliminado correctamente")
+    else:
+        print("Personaje no encontrado")
+
+def SubirNivel(nombre):
+    posicion = buscar(nombre)
+    if posicion >=0:
+        nivel = personajes[posicion]["nivel"]
+        if nivel <50:
+           personajes[posicion]["nivel"] = nivel +1
+           print("Nivel Aumentado")
+           if nivel >=30:
+               personajes[posicion]["rango"] = "Elite"
+        else:
+            print("Se alcanzo el nivel maximo")
+    else:
+        print("El nombre no existe")
