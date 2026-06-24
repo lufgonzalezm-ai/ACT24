@@ -1,3 +1,4 @@
+
 from Funciones import *
 from os import system
 
@@ -23,11 +24,13 @@ while True:
                 clase = input("Ingrese Clase : ").title()
                 nivel = int(input("Ingrese Nivel : "))
                 agregar(nombre,clase,nivel)
-            case 2:pass
+            case 2:
+                nombre = input("Ingrese nombre : ").title()
+                mostrar(nombre)
             case 3:pass
             case 4:pass
             case 5:pass
-            case 6:pass
+            case 6: listar()
             case 7:pass
             case _: print("Error")
     except Exception as e:

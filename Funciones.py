@@ -28,3 +28,18 @@ def agregar(nombre,clase,nivel):
     pj = {"nombre":nombre,"clase":clase,"nivel":nivel,"rango":rango}
     personajes.append(pj)
     print("Personaje Registrado")
+
+def mostrar (nombre):
+    posicion = buscar(nombre)
+    if posicion >= 0:
+        print(f"Persona encontrada : ) {personajes[posicion]}")
+    else:
+        print("Nombre no existe")
+
+def listar():
+    if len(personajes)>0:
+        print(f"{"N°":<3}.- {"nombre":<15} {"Clase":<10} {"nivel":<4} {"rango":<10}")
+        for i in range(len(personajes)):
+            print(f"{i+1<3}.- {personajes[i]["nombre"]:<20} {personajes[i]["Clase"] :<10} {personajes[i]["nivel"]:<4} {personajes[i]["rango"]:<10}")
+    else:
+        print("No hay personajes Registrados")
