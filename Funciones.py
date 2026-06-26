@@ -1,5 +1,3 @@
-#Coleccion para almacenar temporalmente los personajes
-
 personajes = []
 
 def buscar(nombre):
@@ -40,7 +38,7 @@ def listar():
     if len(personajes)>0:
         print(f"{"N°":<3}.- {"nombre":<15} {"clase":<10} {"nivel":<4} {"rango":<10}")
         for i in range(len(personajes)):
-            print(f"{i+1<3}.- {personajes[i]["nombre"]:<20} {personajes[i]["clase"] :<10} {personajes[i]["nivel"]:<4} {personajes[i]["rango"]:<10}")
+            print(f"{i+1:<3}.- {personajes[i]["nombre"]:<20} {personajes[i]["clase"] :<10} {personajes[i]["nivel"]:<4} {personajes[i]["rango"]:<10}")
     else:
         print("No hay personajes Registrados")
 
@@ -65,3 +63,30 @@ def SubirNivel(nombre):
             print("Se alcanzo el nivel maximo")
     else:
         print("El nombre no existe")
+
+
+def estadisticas():
+    if len(personajes)>0:
+        sumaniveles = 0 
+        Guerreros = 0
+        Magos = 0
+        Pícaros = 0
+        for pj in personajes:
+            sumaniveles += pj["nivel"]
+            match pj ["clase"]:
+                case "Guerrero": Guerreros +=1
+                case "Mago": Magos +=1
+                case "Pícaro": Pícaros +=1
+        promedio = round(sumaniveles/len(personajes) ,1)
+        print(f"""
+            Nivel promedio del gremio : {promedio}
+            Cantidad de Guerreros : {Guerreros}
+            Cantidad de Magos     : {Magos}
+            Cantidad de Pícaros   : {Pícaros}
+            """)
+    else:
+        print("No hay personajes registrados")
+
+
+
+

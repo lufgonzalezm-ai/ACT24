@@ -1,4 +1,3 @@
-
 from Funciones import *
 from os import system
 
@@ -31,9 +30,9 @@ while True:
                 nombre = input("Ingrese nombre que desee eliminar : ").title()
                 eliminar(nombre)
             case 4: 
-                nombre = input("Ingrese nombre para subir nivel : ")
-                SubirNivel()
-            case 5:pass
+                nombre = input("Ingrese nombre para subir nivel : ").title()
+                SubirNivel(nombre)
+            case 5:estadisticas()
             case 6: listar()
             case 7: break
             case _: print("Error")
